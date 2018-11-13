@@ -11,3 +11,6 @@ anotherAge = 30;
 
 // now we get a compiler error
 // anotherAge = '30';
+
+let myRealName: string = 'Joseph';
+let joeHasHobbies: boolean = true;
