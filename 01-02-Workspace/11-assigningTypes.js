@@ -8,3 +8,5 @@ var anotherAge;
 anotherAge = 30;
 // now we get a compiler error
 // anotherAge = '30';
+var myRealName = 'Joseph';
+var joeHasHobbies = true;
