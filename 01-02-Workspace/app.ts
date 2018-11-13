@@ -43,7 +43,8 @@ console.log('The Tuple values are ' + address);
 enum Color {
     Gray, // 0
     Green = 100,
-    Blue // ?
+    Blue // ? -> 101
+    // So it continues incrementing with the latest number with the number of the item prior to this one.
 }
 
 let myColor: Color = Color.Blue;
