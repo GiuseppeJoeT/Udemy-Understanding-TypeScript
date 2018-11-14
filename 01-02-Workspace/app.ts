@@ -89,3 +89,34 @@ let userData: { name: string, age: number } = {
     name: 'Joe',
     age: 32
 }
+
+// complex object
+let complex: {data: number[], output: (all: boolean) => number[]} = {
+    data: [100, 3.99, 10],
+
+    output: function (all: boolean): number[] {
+        return this.data
+    }
+};
+
+//TYPE ALIAS: create a new name for a type.
+type Complex = {data: number[], output: (all: boolean) => number[]};
+
+let complex2: Complex = {
+    data: [100, 3.99, 10],
+
+    output: function (all: boolean): number[] {
+        return this.data
+    }
+};
+
+// UNION TYPES: we may chain more than 2 types.
+let myRealRealAge: number | string = 32;
+myRealRealAge = '32';
+// myRealRealAge = true; // error, it's not a number neither a string
+
+// CHECK TYPES
+let finalValue = 30;
+if (typeof finalValue == "number") {
+    console.log('Final value is a number');
+}
