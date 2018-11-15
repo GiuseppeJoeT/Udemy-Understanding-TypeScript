@@ -120,3 +120,18 @@ let finalValue = 30;
 if (typeof finalValue == "number") {
     console.log('Final value is a number');
 }
+
+// NEVER TYPE: represents the type of values that never occur.
+function neverReturns():never {
+    // So it's not returning nothing it's never returning anything.
+    throw new Error('an error occurred!');
+}
+
+console.log(neverReturns());
+
+// NULLABLE TYPES
+let canBeNull: number | null = 12;
+canBeNull = null;
+
+let canAlsoBeNull;
+canAlsoBeNull = null;

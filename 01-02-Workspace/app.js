@@ -70,3 +70,36 @@ var userData = {
     name: 'Joe',
     age: 32
 };
+// complex object
+var complex = {
+    data: [100, 3.99, 10],
+    output: function (all) {
+        return this.data;
+    }
+};
+var complex2 = {
+    data: [100, 3.99, 10],
+    output: function (all) {
+        return this.data;
+    }
+};
+// UNION TYPES: we may chain more than 2 types.
+var myRealRealAge = 32;
+myRealRealAge = '32';
+// myRealRealAge = true; // error, it's not a number neither a string
+// CHECK TYPES
+var finalValue = 30;
+if (typeof finalValue == "number") {
+    console.log('Final value is a number');
+}
+// NEVER TYPE: represents the type of values that never occur.
+function neverReturns() {
+    // So it's not returning nothing it's never returning anything.
+    throw new Error('an error occurred!');
+}
+console.log(neverReturns());
+// NULLABLE TYPES
+var canBeNull = 12;
+canBeNull = null;
+var canAlsoBeNull;
+canAlsoBeNull = null;
