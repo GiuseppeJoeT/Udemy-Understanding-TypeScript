@@ -13,8 +13,8 @@ console.log(maxLevels);
 
 // Block scope
 function reset() {
-    // in this SCOPE the variable is undefined yet
-    console.log(variable);
+    // in this SCOPE the variable is undefined yet so the compiler will get an error
+    // console.log(variable);
     let variable = null;
     console.log(variable);
 } 
@@ -34,3 +34,25 @@ const multiplyNumbers = (number1: number, number2: number) => {
     return number1 * number2;
 }
 console.log(multiplyNumbers(10, 3));
+
+const greet = () => {
+    console.log("Hello!");
+}
+greet();
+
+const greetFriend = friend => {
+    console.log(friend);
+}
+greetFriend('Joe');
+
+
+//  FUNCTIONS: DEFAULT PARAMETERS
+console.log('FUNCTIONS: DEFAULT PARAMETERS');
+const countDown = (start: number = 10): void => {
+    while (start > 0) {
+        start--;
+        //  console.log(start);
+    }
+    console.log("Done!", start);
+}
+countDown();
