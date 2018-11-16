@@ -3,9 +3,10 @@
         "module": "commonjs",
         "target": "es5",
         "noImplicitAny": false,
-        "sourceMap": true,
+        "sourceMap": false,
         "strictNullChecks": true,
-        "noEmitOnError": false
+        "noEmitOnError": false,
+        "noUnusedParameters": false
     },
     "exclude": [
         "node_modules"
