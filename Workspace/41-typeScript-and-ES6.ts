@@ -19,7 +19,7 @@ function reset() {
     console.log(variable);
 } 
 reset();
-// this log to show you how the block scope works. The variable has the global scope value
+// this log is to show you how the block scope works. The variable value has still the global scope value
 console.log(variable);
 
 
@@ -56,3 +56,12 @@ const countDown = (start: number = 10): void => {
     console.log("Done!", start);
 }
 countDown();
+
+// REST & SPREAD OPERATORS: They allow you to work with arrays and list of data.
+console.log('REST & SPREAD OPERATORS');
+const numbers = [1, 10 , 99, -5];
+
+console.log(Math.max(1, 10 , 100, -5));
+// the SPREAD operator turns this array into a list of values kind of like removing the square brackets.
+console.log(Math.max(...numbers));
+
