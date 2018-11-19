@@ -65,3 +65,21 @@ console.log(Math.max(1, 10 , 100, -5));
 // the SPREAD operator turns this array into a list of values kind of like removing the square brackets.
 console.log(Math.max(...numbers));
 
+// the REST operator is the same as the SPREAD one but we can use it in a function parameter
+function makeArray(name: string, ...args: number[]) {
+    return args;
+}
+console.log(makeArray("Joe", 1,2,3,5,7));
+
+// DESTRUCTURING
+console.log('DESTRUCTURING');
+const myHobbies = ['swimming', 'walking'];
+// destructuring Arrays
+const [hobby1, hobby2] = myHobbies;
+console.log(hobby1, hobby2);
+
+// destructuring Objects
+const uData = { userName: "Joe", age: 32 };
+const {userName: uName, age: uAge} = uData;
+console.log(uName, uAge);
+
