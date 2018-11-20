@@ -12,7 +12,7 @@ const Greet =  (name: string = 'Joe'):void => {
 Greet();
 Greet("Anna");
 
-// Exercise 3 - Isn't there a shorter way to get all these Values?
+// Exercise 3 - Isn't there a shorter way to get all these Values? - SPREAD operator
 let Numbers = [-3, 33, 38, 5];
 console.log(Math.min(...Numbers));
 
