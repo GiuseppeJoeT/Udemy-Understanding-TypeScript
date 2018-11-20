@@ -1,4 +1,6 @@
 class Person {
+// superclass
+
     name: string;
     private type: string;
     
@@ -25,8 +27,25 @@ class Person {
 }
 
 // Let's instantiate the Person class
-const person = new Person("Joe", "joe");
+const person = new Person("Max", "max");
 console.log(person);
-console.log(person.name, person.username); // Joe joe
+console.log(person.name, person.username); // Max max
 person.printAge(); // 32 - Old guy
 // person.setType("Cool guy"); // 
+
+
+// INHERITANCE
+class Joe extends Person {
+// base class
+
+    // the content  you find in the main class here always overrides the content of you a superclass of your parent class
+    name = "Joe";
+
+    constructor(username: string) {
+        // super() will execute the constructor of the base class.
+        super("joe32", username);
+    }
+}
+
+const joe = new Joe("joe"); // Joe(username) {}
+console.log(joe);
