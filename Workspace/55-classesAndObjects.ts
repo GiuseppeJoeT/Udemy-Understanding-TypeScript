@@ -44,6 +44,8 @@ class Joe extends Person {
     constructor(username: string) {
         // super() will execute the constructor of the base class.
         super("joe32", username);
+        // access a protected property
+        this.age = 69;
     }
 }
 
