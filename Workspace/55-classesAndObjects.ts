@@ -1,12 +1,15 @@
 class Person {
 // superclass
 
+    // public property by default. Freely access to that property
     name: string;
+
+    // private property cannot be accessed from outside of its containing class
     private type: string;
     
     // PROTECTED and PRIVATE properties are only available or accessible from the object you created
     protected age: number = 32;
-    // Additionally they're also accessible from any objects or classes which inherit from this class.
+    // Additionally PROTECTED properties are also accessible from any objects or classes which inherit from this class.
 
     constructor(name: string, public username: string) {
         // the USERNAME property basically is a shortcut for:
@@ -20,7 +23,7 @@ class Person {
         console.log(this.age);
         this.setType("Old guy");
     }
-    setType(type: string) {
+    private setType(type: string) {
         this.type = type;
         console.log(this.type);
     }
@@ -51,3 +54,43 @@ class Joe extends Person {
 
 const joe = new Joe("joe"); // Joe(username) {}
 console.log(joe);
+
+
+//  GETTERS & SETTERS
+class Plant {
+    private _species: string = "Default";
+
+    get species() {
+        return this._species;
+    }
+
+    set species(value: string) {
+        if (value.length > 3) {
+            this._species = value;
+        } else {
+            this._species = "Default";
+        }
+    }
+}
+
+let plant = new Plant();
+// plant.species -> is getting this._species -> Default
+console.log(plant.species);
+plant.species = 'AB';
+console.log(plant.species); // -> Default
+// setting
+plant.species = 'Evergreen plant';
+// getting
+console.log(plant.species); 
+
+
+// Static Properties & Methods
+class Helpers {
+    static PI: number = 3.14;
+    static calcCircumference(diameter: number) {
+        return this.PI * diameter;
+    }
+};
+
+console.log(2 * Helpers.PI);
+console.log(Helpers.calcCircumference(10));
