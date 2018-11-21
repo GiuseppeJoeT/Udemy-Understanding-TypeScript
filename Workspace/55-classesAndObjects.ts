@@ -58,7 +58,7 @@ console.log(joe);
 
 //  GETTERS & SETTERS
 class Plant {
-    private _species: string = "Default";
+    private _species: string = "Default plant";
 
     get species() {
         return this._species;
@@ -68,7 +68,7 @@ class Plant {
         if (value.length > 3) {
             this._species = value;
         } else {
-            this._species = "Default";
+            this._species = "Default plant";
         }
     }
 }
@@ -86,6 +86,7 @@ console.log(plant.species);
 
 // Static Properties & Methods
 class Helpers {
+    // static members of a class are visible on the class itself rather than on the instances
     static PI: number = 3.14;
     static calcCircumference(diameter: number) {
         return this.PI * diameter;
@@ -94,3 +95,29 @@ class Helpers {
 
 console.log(2 * Helpers.PI);
 console.log(Helpers.calcCircumference(10));
+
+
+// Abstract Classes
+abstract class Project {
+    // Abstract classes are base classes from which other classes may be derived. They may not be instantiated directly.
+    projectName: string = "Default project";
+    budget: number;
+
+    // abstract method: do not contain an implementation and must be implemented in derived classes (eg: ITProject)
+    abstract changeName(name: string): void;
+
+    calcBudget() {
+        return this.budget * 2;
+    }
+}
+
+class ITProject extends Project {
+    changeName(name: string): void {
+        this.projectName = name;
+    }
+}
+
+let newProject = new ITProject();
+console.log(newProject);
+newProject.changeName("IT Project n.001");
+console.log(newProject);
