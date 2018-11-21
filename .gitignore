@@ -4,5 +4,6 @@
 # js file
 *.js
 
-*./node_modules
-*../ch05-UsingClassesToCreateObjects
+/node_modules
+../ch05-UsingClassesToCreateObjects
+/ch05-UsingClassesToCreateObjects
