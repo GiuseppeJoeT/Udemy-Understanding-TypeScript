@@ -5,4 +5,4 @@
 *.js
 
 *./node_modules
-*./ch05-UsingClassesToCreateObjects
+*../ch05-UsingClassesToCreateObjects
