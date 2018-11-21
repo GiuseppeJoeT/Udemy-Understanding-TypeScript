@@ -3,3 +3,6 @@
 
 # js file
 *.js
+
+*./node_modules
+*./ch05-UsingClassesToCreateObjects
