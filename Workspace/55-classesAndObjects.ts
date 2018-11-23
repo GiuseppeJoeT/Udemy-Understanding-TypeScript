@@ -1,8 +1,11 @@
 class Person {
 // superclass
 
-    // public property by default. Freely access to that property
+    // 1) public property by default. Freely access to that property
     name: string;
+
+    // the same as above
+    public nome: string;
 
     // private property cannot be accessed from outside of its containing class
     private type: string;
@@ -11,14 +14,16 @@ class Person {
     protected age: number = 32;
     // Additionally PROTECTED properties are also accessible from any objects or classes which inherit from this class.
 
+    // 2) getting the argument 
     constructor(name: string, public username: string) {
         // the USERNAME property basically is a shortcut for:
         // 1) creating a property; 
-        // 2) getting the argument 
+        // 2) getting the argument
+
         // 3) assigning the argument
         this.name = name;
     }
-    // how you create methods which you may access from outside
+    // methods which you may access from outside
     printAge() {
         console.log(this.age);
         this.setType("Old guy");
@@ -30,12 +35,11 @@ class Person {
 }
 
 // Let's instantiate the Person class
-const person = new Person("Max", "max");
+const person = new Person("Max", "max69");
 console.log(person);
 console.log(person.name, person.username); // Max max
 person.printAge(); // 32 - Old guy
 // person.setType("Cool guy"); // 
-
 
 // INHERITANCE
 class Joe extends Person {
@@ -97,7 +101,7 @@ console.log(2 * Helpers.PI);
 console.log(Helpers.calcCircumference(10));
 
 
-// Abstract Classes
+// -- ABSTRACT Classes --
 abstract class Project {
     // Abstract classes are base classes from which other classes may be derived. They may not be instantiated directly.
     projectName: string = "Default project";
@@ -111,13 +115,47 @@ abstract class Project {
     }
 }
 
+// you have to inherit from Abstract classes, always!
 class ITProject extends Project {
+
+     // abstract method implementation
     changeName(name: string): void {
         this.projectName = name;
     }
 }
 
+
+console.log('ABSTRACT CLASSES: So what is the sense of abstract classes then? ' 
+ + 'Well you have to inherit from them always.' 
+ + 'They are basically just there TO BE well INHERITED FROM. '
+ + 'Well maybe because this class NEVER needs to be INSTANTIATED but only provide some basic set up over'
+ + 'more specialized classes which then will be instantiated.'
+ + 'And this allows you to set up a CLASS where you only want to HAVE ONE INSTANCE during RUNTIME.');
+
+
 let newProject = new ITProject();
-console.log(newProject);
+console.log(newProject); // ITProject {projectName: "Default project"} -> so 1 object with 1 property
+
 newProject.changeName("IT Project n.001");
 console.log(newProject);
+
+// Private Constructors - SINGLETON PATTERN
+class OnlyOne {
+    // We can't access it from outside.
+    private static instance: OnlyOne;
+
+    // private constructor to avoid creating objects from external classes
+    private constructor(public name: string) {}
+ 
+    // The getInstance() method create the only instance of the object, subsequent invocations of getInstance() method return the reference to the same object.
+    static getInstance() {
+        if (!OnlyOne.instance) {
+            OnlyOne.instance = new OnlyOne('The Only One');
+        }
+        return OnlyOne.instance;
+    }
+}
+
+//  let wrong = new OnlyOne('The Only One'); -> this won't compile 
+let right = OnlyOne.getInstance();
+console.log(right);
