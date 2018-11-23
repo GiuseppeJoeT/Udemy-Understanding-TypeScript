@@ -135,3 +135,6 @@ canBeNull = null;
 
 let canAlsoBeNull;
 canAlsoBeNull = null;
+
+// Render HTML using the object property username
+// const usernameSelector = querySelector('.username').textContent = person.username;
