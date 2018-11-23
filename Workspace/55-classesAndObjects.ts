@@ -144,18 +144,30 @@ class OnlyOne {
     // We can't access it from outside.
     private static instance: OnlyOne;
 
+
     // private constructor to avoid creating objects from external classes
-    private constructor(public name: string) {}
+    private constructor(public name: string, public readonly surname: string) {}
  
     // The getInstance() method create the only instance of the object, subsequent invocations of getInstance() method return the reference to the same object.
     static getInstance() {
         if (!OnlyOne.instance) {
-            OnlyOne.instance = new OnlyOne('The Only One');
+            OnlyOne.instance = new OnlyOne('name', 'Surname');
         }
         return OnlyOne.instance;
     }
 }
 
-//  let wrong = new OnlyOne('The Only One'); -> this won't compile 
-let right = OnlyOne.getInstance();
-console.log(right);
+//  let wrongInstance = new OnlyOne('The Only One'); -> this won't compile 
+let rightInstance = OnlyOne.getInstance();
+console.log(rightInstance);
+
+// from private constructor
+console.log(rightInstance.name);
+
+// NAME is a public property, let's change it!
+rightInstance.name = ' "name" property updated!';
+console.log(rightInstance.name);
+
+// readonly property
+// rightInstance.surname = 'this will not work because surname is a readonly property ';
+console.log(rightInstance.surname);
