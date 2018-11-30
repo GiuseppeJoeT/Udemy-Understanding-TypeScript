@@ -12,6 +12,6 @@ namespace MyMath {
 
 const PI = 2.99;
 
-console.log(MyMath.calculateRectangle(10,30));
-console.log(MyMath.calculateCircumference(10));
-console.log(PI);
+console.log('Rectangle area: ' + MyMath.calculateRectangle(10,30));
+console.log('Circumference area: ' + MyMath.calculateCircumference(10));
+console.log('PI: ' + PI);
