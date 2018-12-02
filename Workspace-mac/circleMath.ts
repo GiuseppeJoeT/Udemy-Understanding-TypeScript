@@ -1,7 +1,9 @@
 namespace MyMaths {
-    const pi = 3.14;
+    export namespace nestedCircle {
+        const pi = 3.14;
 
-    export function calcuCircumference(diameter: number) {
-        return diameter * pi;
-    } 
+        export function calcuCircumference(diameter: number) {
+            return diameter * pi;
+        }
+    }
 }
