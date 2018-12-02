@@ -1,3 +1,4 @@
+// It’s important to note that in TypeScript 1.5, the nomenclature has changed. “Internal modules” are now “namespaces”
 namespace MyMath {
     const PI = 3.14;
 
