@@ -144,7 +144,6 @@ class OnlyOne {
     // We can't access it from outside.
     private static instance: OnlyOne;
 
-
     // private constructor to avoid creating objects from external classes
     private constructor(public name: string, public readonly surname: string) {}
  
@@ -156,18 +155,18 @@ class OnlyOne {
         return OnlyOne.instance;
     }
 }
-
+ 
 //  let wrongInstance = new OnlyOne('The Only One'); -> this won't compile 
 let rightInstance = OnlyOne.getInstance();
 console.log(rightInstance);
 
 // from private constructor
-console.log(rightInstance.name);
+console.log(rightInstance.name); // name
 
 // NAME is a public property, let's change it!
 rightInstance.name = ' "name" property updated!';
-console.log(rightInstance.name);
+console.log(rightInstance.name); // "name" property updated!
 
-// readonly property
+// READONLY property
 // rightInstance.surname = 'this will not work because surname is a readonly property ';
-console.log(rightInstance.surname);
+console.log(rightInstance.surname); // Surname
