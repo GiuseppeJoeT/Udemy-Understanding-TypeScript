@@ -15,9 +15,24 @@
     <!-- <script src="51-TS-and-ES6-solution.js"></script> -->
     <!-- <script src="55-classesAndObjects.js"></script> -->
     <!-- <script src="66-classesObjects-exercise.js"></script> -->
-    <script src="75-Modules.js"></script>
+    <!-- <script src="75-Modules.js"></script> -->
+    <script src="node_modules/systemjs/dist/system.js"></script>
+
 </head>
 <body>
     <h1>test</h1>
+    <script>
+            // the SystemJS package helps us with loading modules.
+            // set our baseURL reference path
+            SystemJS.config({
+                baseURL: '/',
+                packages: {
+                    '/': {
+                        defaultExtension: 'js'
+                    }
+                }     
+            });
+            SystemJS.import('75-Modules.js');
+        </script>
 </body>
 </html>
