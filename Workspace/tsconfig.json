@@ -1,12 +1,12 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "amd",
         "target": "es5",
         "noImplicitAny": false,
-        "sourceMap": false,
-        "strictNullChecks": true,
-        "noEmitOnError": false,
-        "noUnusedParameters": false
+        "sourceMap": false
+        // "strictNullChecks": true,
+        // "noEmitOnError": false,
+        // "noUnusedParameters": false
     },
     "exclude": [
         "node_modules"
