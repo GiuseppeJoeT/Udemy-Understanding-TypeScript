@@ -4,6 +4,11 @@
 # js file
 *.js
 
+# txt file
+*.txt
+
 /node_modules
 ../ch05-UsingClassesToCreateObjects
 /ch05-UsingClassesToCreateObjects
+/ch06-Namespaceces-Modules
+
