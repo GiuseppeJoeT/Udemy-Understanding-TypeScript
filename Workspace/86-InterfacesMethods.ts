@@ -11,7 +11,7 @@ interface PersonInterface {
 const person001: PersonInterface = {
     firstName: 'Joseph',
     greet(lastName: string) {
-        console.log("Hi, I'm " + this.firstName + " " + this.lastName);
+        console.log("Hi, I'm " + this.firstName + " " + lastName);
     }
 };
 
