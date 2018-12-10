@@ -1,8 +1,12 @@
 interface PersonInterface {
     firstName: string;
+
     // age is an optional property
     age?: number;
-    
+
+    // readonly property
+    readonly hobby?: string; 
+
     // method
     greet(lastName: string) : void;
 } 
