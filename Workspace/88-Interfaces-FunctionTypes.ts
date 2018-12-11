@@ -1,4 +1,5 @@
 // Function Types
+// In addition to describing an object with properties, interfaces are also capable of describing function types
 interface DoubleValueFunct {
     (number1: number, number2: number): number;
 }
