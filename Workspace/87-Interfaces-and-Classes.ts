@@ -2,7 +2,7 @@ interface PersonInterface {
     firstName: string;
 
     // age is an optional property
-    age?: number;
+    nationality?: number;
 
     // readonly property
     readonly hobby?: string; 
@@ -19,7 +19,22 @@ class PersonInterClass implements PersonInterface {
     }
 }
 
+// Interface Inheritance
+interface AgedPersonInterf extends PersonInterface {
+    age: number
+}
+
 const myPersonInterClass = new PersonInterClass();
 myPersonInterClass.firstName = 'Francesco';
 myPersonInterClass.lastName = 'Totti';
 myPersonInterClass.greet(myPersonInterClass.lastName);
+
+const oldPersonInterf: AgedPersonInterf = {
+    age: 32,
+    firstName: 'Joe',
+    greet(lastName: string) {
+        console.log(lastName);
+    }
+}
+
+console.log(oldPersonInterf);
