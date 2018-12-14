@@ -33,5 +33,5 @@ function printable(constructorFn: Function) {
 class GreenPlant {
     name: "Green Plant";
 }
-const plant = new GreenPlant();
-(<any>plant).print();
+const greenPlant = new GreenPlant();
+(<any>greenPlant).print();
