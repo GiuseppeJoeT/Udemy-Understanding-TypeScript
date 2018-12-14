@@ -6,7 +6,19 @@ function editable(value: boolean) {
     }
 }
 
+// Property Decorator
+function overwritable(value: boolean) {
+    return function(target: any, propName: string): any {
+        const newDescriptor: PropertyDescriptor = {
+            writable: value
+        };
+        return newDescriptor;
+    }
+}
+
 class DecoratorProject {
+    // test Property Decorator
+    // @overwritable(false)
     projectName: string;
 
     constructor(name: string) {
@@ -27,4 +39,7 @@ project.calcBudget = function() {
     console.log(2000 + '€');
 };
 
-project.calcBudget(); // 2000, if the @editable decorator is not FALSE 
+project.calcBudget(); // 2000, if the @editable decorator is not FALSE
+
+// test Property Decorator
+console.log(project);
